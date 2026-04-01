@@ -3,67 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Cookies — Assessoria d'Habitatge</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Assessoria d'Habitatge — La teva guia per a l'habitatge a Catalunya</title>
+  <meta name="description" content="Plataforma gratuïta d'assessoria d'habitatge per a Catalunya. Analitza preus, calcula hipoteques i rep orientació personalitzada.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="nav"><div class="nav-inner">
-  <a href="../index.html" class="nav-logo">
-    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#0c7abf"/><path d="M18 8L8 16h3v10h6v-6h2v6h6V16h3L18 8z" fill="#fff"/></svg>
-    <span>Assessoria<br><small style="color:var(--brand);font-size:.7em;font-family:var(--font-body)">Habitatge</small></span>
+
+<!-- NAV -->
+<nav class="nav"><div class="nav-in">
+  <a href="index.html" class="logo">
+    <div class="logo-icon">🏠</div>
+    <div>Assessoria<small>Habitatge</small></div>
   </a>
-  <div class="nav-links" id="navLinks">
-    <a href="../index.html" data-i18n="nav_home">Inici</a>
-    <a href="el-projecte.html" data-i18n="nav_project">El Projecte</a>
-    <a href="assessoria.html" data-i18n="nav_assessoria">Assessoria</a>
-    <a href="propcheck.html" data-i18n="nav_propcheck">Valoració</a>
-    <a href="blog.html" data-i18n="nav_blog">Blog</a>
-    <a href="documentacio.html" data-i18n="nav_docs">Documentació</a>
-    <a href="premsa.html" data-i18n="nav_press">Premsa</a>
-    <a href="contacte.html" data-i18n="nav_contact">Contacte</a>
-    <div class="nav-lang"><button data-lang="ca" class="active">CA</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+  <div class="nav-links">
+    <a href="index.html" class="active" data-t="nav_home">Inici</a>
+    <a href="el-projecte.html" data-t="nav_project">El Projecte</a>
+    <a href="assessoria.html" data-t="nav_assessoria">Assessoria</a>
+    <a href="propcheck.html" data-t="nav_propcheck">Valoració</a>
+    <a href="blog.html" data-t="nav_blog">Blog</a>
+    <a href="documentacio.html" data-t="nav_docs">Documentació</a>
+    <a href="premsa.html" data-t="nav_press">Premsa</a>
+    <a href="contacte.html" data-t="nav_contact">Contacte</a>
+    <div class="lang">
+      <button data-l="ca" class="active">CA</button>
+      <button data-l="es">ES</button>
+      <button data-l="en">EN</button>
+    </div>
   </div>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
 
-<section class="page-header">
-  <div class="container">
-    <h1 data-i18n="footer_cookies">Política de Cookies</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-g">
+    <div>
+      <span class="hero-badge" data-t="hero_badge">Eina gratuïta per a Catalunya</span>
+      <h1><span data-t="hero_t1">La teva guia per a</span><br><em data-t="hero_t2">l'habitatge a Catalunya</em></h1>
+      <p class="hero-desc" data-t="hero_desc">Analitza preus, calcula hipoteques, compara municipis i rep orientació personalitzada. Tot gratuït, amb dades reals.</p>
+      <div class="hero-btns">
+        <a href="assessoria.html" class="btn btn-p btn-lg" data-t="hero_btn1">Assessoria completa</a>
+        <a href="propcheck.html" class="btn btn-a btn-lg" data-t="hero_btn2">Valorar immoble</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>224</strong><span data-t="stat1">Municipis</span></div>
+        <div class="hero-stat"><strong>100%</strong><span data-t="stat2">Gratuït</span></div>
+        <div class="hero-stat"><strong>2min</strong><span data-t="stat3">En 2 minuts</span></div>
+      </div>
+    </div>
+    <div class="hero-card" style="text-align:center;">
+      <div style="font-size:3.5rem;margin-bottom:12px;">🏠</div>
+      <div class="hero-card-title">Cunit</div>
+      <div class="hero-card-sub">Baix Penedès, Tarragona</div>
+      <div class="mini-grid">
+        <div class="mini-card"><small>Preu/m² compra</small><strong>1.842 €</strong></div>
+        <div class="mini-card"><small>Lloguer mitjà</small><strong>650 €/mes</strong></div>
+        <div class="mini-card"><small>Estalvi necessari</small><strong>~35.000 €</strong></div>
+        <div class="mini-card"><small>Esforç hipotecari</small><strong>~32%</strong></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="max-width:800px;">
-    <h2>Què utilitza aquesta web actualment</h2>
-    <p style="color:var(--text-light);margin:12px 0 24px;">
-      En el codi revisat d'aquesta versió només s'emmagatzemen preferències tècniques al navegador. No he vist Google Analytics ni Firebase implementats aquí.
-    </p>
-
-    <h2>Emmagatzematge local</h2>
-    <p style="color:var(--text-light);margin:12px 0 12px;"><strong>ah_lang</strong>: guarda l'idioma seleccionat.</p>
-    <p style="color:var(--text-light);margin:0 0 12px;"><strong>ah_cookies</strong>: guarda si l'usuari ha acceptat o rebutjat el banner.</p>
-    <p style="color:var(--text-light);margin:0 0 24px;">Aquestes preferències romanen al navegador fins que l'usuari les esborra manualment o neteja les dades del lloc.</p>
-
-    <h2>Serveis de tercers</h2>
-    <p style="color:var(--text-light);margin:12px 0 24px;">
-      Algunes pàgines incrusten eines mitjançant iframe. Quan l'usuari interactua amb aquests continguts, el servei extern podria aplicar les seves pròpies tecnologies. Si mantens aquestes integracions en producció, convé indicar aquí els proveïdors reals i enllaçar les seves polítiques.
-    </p>
-
-    <h2>Canvis futurs</h2>
-    <p style="color:var(--text-light);margin:12px 0 24px;">
-      Si més endavant afegeixes Analytics, píxels publicitaris, autenticació o sistemes de seguiment, aquesta pàgina i el banner de consentiment s'hauran d'actualitzar.
-    </p>
-
-    <p style="color:var(--text-light);font-style:italic;margin-top:32px;">Última actualització: abril 2026</p>
+<!-- FEATURES -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sh">
+      <div class="over" data-t="fo">Què oferim</div>
+      <h2 data-t="ft">Eines per prendre millors decisions</h2>
+      <p data-t="fd">Tot el que necessites per entendre el mercat immobiliari i prendre decisions amb confiança.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card anim"><div class="card-ico">📊</div><h3 data-t="f1t">Assessoria financera</h3><p data-t="f1d">Calcula la teva hipoteca, analitza el teu perfil financer i rep un pla d'acció personalitzat amb IA.</p></div>
+      <div class="card anim"><div class="card-ico">🏠</div><h3 data-t="f2t">Valoració d'immobles</h3><p data-t="f2d">Descobreix si el preu que et demanen és just. Compara amb dades reals del mercat català.</p></div>
+      <div class="card anim"><div class="card-ico">🗺️</div><h3 data-t="f3t">Comparador de municipis</h3><p data-t="f3d">Compara preus, serveis i qualitat de vida entre municipis del Baix Penedès i tota Catalunya.</p></div>
+      <div class="card anim"><div class="card-ico">📝</div><h3 data-t="f4t">Blog actualitzat</h3><p data-t="f4d">Articles, guies i anàlisis sobre el mercat immobiliari, ajuts i consells per a joves.</p></div>
+      <div class="card anim"><div class="card-ico">📄</div><h3 data-t="f5t">Documentació gratuïta</h3><p data-t="f5d">Checklists de visita, guies per a propietaris, tests personalitzats i més — tot descarregable.</p></div>
+      <div class="card anim"><div class="card-ico">🏛️</div><h3 data-t="f6t">Dades oficials</h3><p data-t="f6d">Basem les nostres recomanacions en dades de l'Idescat, Generalitat i registres oficials.</p></div>
+    </div>
   </div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-bottom">
-  <span data-i18n="footer_rights">© 2026 Assessoria Habitatge. Tots els drets reservats.</span>
-</div></div></footer>
-<script src="../js/main.js"></script>
+<!-- TESTIMONIALS -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="sh">
+      <div class="over" data-t="to">Testimonis</div>
+      <h2 data-t="tt">Què en diuen els nostres usuaris</h2>
+    </div>
+    <div class="grid g3">
+      <div class="test anim"><p>"Gràcies a l'assessoria vaig descobrir que podia comprar un pis a Cunit amb el meu sou. Pensava que era impossible!"</p><div class="test-name">Marc T.</div><div class="test-role">24 anys, Vilanova i la Geltrú</div></div>
+      <div class="test anim"><p>"La checklist de visita em va ajudar a detectar problemes d'humitat que no hauria vist. Molt recomanable."</p><div class="test-name">Laura S.</div><div class="test-role">28 anys, El Vendrell</div></div>
+      <div class="test anim"><p>"El comparador de municipis em va obrir els ulls. Vaig trobar zones molt millors del que pensava per al meu pressupost."</p><div class="test-name">Jordi M.</div><div class="test-role">31 anys, Barcelona</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sh">
+      <div class="over" data-t="bo">Blog Actualitat</div>
+      <h2 data-t="bt">Últims articles</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card bcard anim"><div class="bcard-img">🏘️</div><div class="bcard-body"><h3>Comprar o llogar amb sou jove: quan surt millor cada opció?</h3><p>Analitzem quan té sentit cada opció amb exemples reals del Baix Penedès.</p><span class="bcard-date">2026</span><a href="blog.html" class="bcard-link" data-t="bread">Llegeix-ne més →</a></div></div>
+      <div class="card bcard anim"><div class="bcard-img">💰</div><div class="bcard-body"><h3>Quant cobra un jove al Baix Penedès i quin habitatge es pot permetre?</h3><p>Sous reals, lloguers habituals i límits raonables per entendre l'emancipació juvenil.</p><span class="bcard-date">2026</span><a href="blog.html" class="bcard-link" data-t="bread">Llegeix-ne més →</a></div></div>
+      <div class="card bcard anim"><div class="bcard-img">📊</div><div class="bcard-body"><h3>Radiografia del lloguer a Cunit (2025)</h3><p>Quantes llars busquen pis, quants habitatges hi ha disponibles i per què la tensió.</p><span class="bcard-date">2025</span><a href="blog.html" class="bcard-link" data-t="bread">Llegeix-ne més →</a></div></div>
+    </div>
+    <div class="center" style="margin-top:32px;"><a href="blog.html" class="btn btn-o" data-t="bbtn">Veure tots els articles</a></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2 data-t="cta_t">Comença a analitzar el teu habitatge</h2>
+    <p data-t="cta_d">Eines gratuïtes, dades reals i orientació professional. Sense compromís.</p>
+    <a href="assessoria.html" class="btn btn-w btn-lg" data-t="cta_b">Començar ara</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="wrap">
+  <div class="footer-g">
+    <div class="footer-brand">
+      <div class="logo" style="color:#fff;margin-bottom:8px;"><div class="logo-icon">🏠</div><div>Assessoria Habitatge</div></div>
+      <p data-t="fdesc">Plataforma d'assessoria d'habitatge gratuïta per a Catalunya.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/assessoriahabitatge/" target="_blank" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">📘</a>
+      </div>
+    </div>
+    <div><h4 data-t="ftools">Eines</h4><a href="assessoria.html" data-t="nav_assessoria">Assessoria</a><a href="propcheck.html" data-t="nav_propcheck">Valoració</a><a href="blog.html" data-t="nav_blog">Blog</a><a href="documentacio.html" data-t="nav_docs">Documentació</a></div>
+    <div><h4 data-t="fres">Recursos</h4><a href="el-projecte.html" data-t="nav_project">El Projecte</a><a href="premsa.html" data-t="nav_press">Premsa</a><a href="contacte.html" data-t="nav_contact">Contacte</a></div>
+    <div><h4 data-t="fleg">Legal</h4><a href="privacitat.html" data-t="fpriv">Política de privacitat</a><a href="cookies.html" data-t="fcook">Política de cookies</a><a href="avis-legal.html" data-t="fterm">Avís legal</a></div>
+  </div>
+  <div class="footer-bot">
+    <span data-t="frights">© 2026 Assessoria Habitatge. Tots els drets reservats.</span>
+    <span style="font-style:italic" data-t="fdisc">Eina orientativa. Els preus són estimats.</span>
+  </div>
+</div></footer>
+
+<!-- COOKIES -->
+<div class="ck-banner"><span data-t="ckt">Utilitzem cookies per millorar la teva experiència.</span> <a href="cookies.html" data-t="ckp">Política de cookies</a><div class="ck-btns"><button class="btn btn-o ckr" style="border-color:rgba(255,255,255,.2);color:#94a3b8;padding:6px 14px;font-size:.8rem" data-t="ckr">Rebutjar</button><button class="btn btn-p cka" style="padding:6px 14px;font-size:.8rem" data-t="cka">Acceptar</button></div></div>
+
+<script src="main.js"></script>
 </body>
 </html>

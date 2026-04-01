@@ -1,284 +1,192 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assessoria d'Habitatge — La teva guia per a l'habitatge a Catalunya</title>
-  <meta name="description" content="Plataforma gratuïta d'assessoria d'habitatge per a Catalunya. Analitza preus, calcula hipoteques, compara municipis i rep orientació personalitzada.">
-  <meta name="keywords" content="habitatge, Catalunya, hipoteca, lloguer, compra, Cunit, Baix Penedès, assessoria, vivienda">
-  <meta property="og:title" content="Assessoria d'Habitatge — La teva guia per a l'habitatge a Catalunya">
-  <meta property="og:description" content="Eines gratuïtes per analitzar preus, calcular hipoteques i rebre orientació personalitzada.">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="https://assessoriahabitatge.com/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+/* === ASSESSORIA HABITATGE — Design System === */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap');
 
-<!-- ========== NAVIGATION ========== -->
-<nav class="nav" role="navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="36" height="36" rx="8" fill="#0c7abf"/>
-        <path d="M18 8L8 16h3v10h6v-6h2v6h6V16h3L18 8z" fill="#fff"/>
-      </svg>
-      <span>Assessoria<br><small style="color:var(--brand);font-size:.7em;font-family:var(--font-body)">Habitatge</small></span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active" data-i18n="nav_home">Inici</a>
-      <a href="pages/el-projecte.html" data-i18n="nav_project">El Projecte</a>
-      <a href="pages/assessoria.html" data-i18n="nav_assessoria">Assessoria</a>
-      <a href="pages/propcheck.html" data-i18n="nav_propcheck">Valoració</a>
-      <a href="pages/blog.html" data-i18n="nav_blog">Blog</a>
-      <a href="pages/documentacio.html" data-i18n="nav_docs">Documentació</a>
-      <a href="pages/premsa.html" data-i18n="nav_press">Premsa</a>
-      <a href="pages/contacte.html" data-i18n="nav_contact">Contacte</a>
-      <div class="nav-lang">
-        <button data-lang="ca" class="active">CA</button>
-        <button data-lang="es">ES</button>
-        <button data-lang="en">EN</button>
-      </div>
-    </div>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0c7abf;--brand-d:#085a8c;--brand-l:#e0f2fe;
+  --accent:#f59e0b;--accent-d:#d97706;
+  --bg:#fff;--bg2:#f8fafc;--dark:#0f172a;
+  --txt:#1e293b;--txt2:#64748b;--txt-inv:#f1f5f9;
+  --border:#e2e8f0;
+  --r:12px;--rs:8px;
+  --sh:0 4px 16px rgba(0,0,0,.08);
+  --font:'DM Sans',system-ui,sans-serif;
+  --serif:'DM Serif Display',Georgia,serif;
+  --nav-h:68px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font);color:var(--txt);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand);text-decoration:none;transition:color .2s}
+a:hover{color:var(--brand-d)}
+button{cursor:pointer;font-family:inherit}
+ul,ol{list-style:none}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--txt);line-height:1.2}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:clamp(1.5rem,4vw,2.2rem)}
+h3{font-size:clamp(1.1rem,3vw,1.4rem)}
 
-<!-- ========== HERO ========== -->
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <span class="hero-badge" data-i18n="hero_badge">Eina gratuïta per a Catalunya</span>
-      <h1>
-        <span data-i18n="hero_title_1">La teva guia per a</span><br>
-        <em data-i18n="hero_title_2">l'habitatge a Catalunya</em>
-      </h1>
-      <p class="hero-desc" data-i18n="hero_desc">
-        Analitza preus, calcula hipoteques, compara municipis i rep orientació personalitzada. Tot gratuït, amb dades reals.
-      </p>
-      <div class="hero-btns">
-        <a href="pages/assessoria.html" class="btn btn-primary btn-lg" data-i18n="hero_btn_assessoria">Assessoria completa</a>
-        <a href="pages/propcheck.html" class="btn btn-accent btn-lg" data-i18n="hero_btn_propcheck">Valorar immoble</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <strong>224</strong>
-          <span data-i18n="stat_municipis">Municipis</span>
-        </div>
-        <div class="hero-stat">
-          <strong>100%</strong>
-          <span data-i18n="stat_gratuit">Gratuït</span>
-        </div>
-        <div class="hero-stat">
-          <strong>2min</strong>
-          <span data-i18n="stat_temps">En 2 minuts</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div style="text-align:center;color:#94a3b8;">
-        <div style="font-size:4rem;margin-bottom:16px;">🏠</div>
-        <div style="font-size:1.8rem;font-family:var(--font-display);color:#fff;margin-bottom:8px;">Cunit</div>
-        <div style="font-size:.9rem;margin-bottom:24px;">Baix Penedès, Tarragona</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;">
-          <div style="background:rgba(255,255,255,.06);padding:12px;border-radius:8px;">
-            <div style="font-size:.75rem;color:#64748b;">Preu/m² compra</div>
-            <div style="font-size:1.2rem;color:#fff;font-weight:700;">1.842 €</div>
-          </div>
-          <div style="background:rgba(255,255,255,.06);padding:12px;border-radius:8px;">
-            <div style="font-size:.75rem;color:#64748b;">Lloguer mitjà</div>
-            <div style="font-size:1.2rem;color:#fff;font-weight:700;">650 €/mes</div>
-          </div>
-          <div style="background:rgba(255,255,255,.06);padding:12px;border-radius:8px;">
-            <div style="font-size:.75rem;color:#64748b;">Estalvi necessari</div>
-            <div style="font-size:1.2rem;color:#fff;font-weight:700;">~35.000 €</div>
-          </div>
-          <div style="background:rgba(255,255,255,.06);padding:12px;border-radius:8px;">
-            <div style="font-size:.75rem;color:#64748b;">Esforç hipotecari</div>
-            <div style="font-size:1.2rem;color:#fff;font-weight:700;">~32%</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+/* Layout */
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.sec{padding:72px 0}
+.sec-alt{background:var(--bg2)}
+.sec-dark{background:var(--dark);color:var(--txt-inv)}
+.grid{display:grid;gap:24px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.center{text-align:center}
 
-<!-- ========== FEATURES ========== -->
-<section class="section" id="features">
-  <div class="container">
-    <div class="section-header">
-      <div class="overline" data-i18n="feat_overline">Què oferim</div>
-      <h2 data-i18n="feat_title">Eines per prendre millors decisions</h2>
-      <p data-i18n="feat_desc">Tot el que necessites per entendre el mercat immobiliari i prendre decisions amb confiança.</p>
-    </div>
-    <div class="features-grid">
-      <div class="card animate-on-scroll">
-        <div class="card-icon">📊</div>
-        <h3 data-i18n="feat_1_title">Assessoria financera</h3>
-        <p data-i18n="feat_1_desc">Calcula la teva hipoteca, analitza el teu perfil financer i rep un pla d'acció personalitzat amb IA.</p>
-      </div>
-      <div class="card animate-on-scroll">
-        <div class="card-icon">🏠</div>
-        <h3 data-i18n="feat_2_title">Valoració d'immobles</h3>
-        <p data-i18n="feat_2_desc">Descobreix si el preu que et demanen és just. Compara amb dades reals del mercat català.</p>
-      </div>
-      <div class="card animate-on-scroll">
-        <div class="card-icon">🗺️</div>
-        <h3 data-i18n="feat_3_title">Comparador de municipis</h3>
-        <p data-i18n="feat_3_desc">Compara preus, serveis i qualitat de vida entre municipis del Baix Penedès i tota Catalunya.</p>
-      </div>
-      <div class="card animate-on-scroll">
-        <div class="card-icon">📝</div>
-        <h3 data-i18n="feat_4_title">Blog actualitzat</h3>
-        <p data-i18n="feat_4_desc">Articles, guies i anàlisis sobre el mercat immobiliari, ajuts i consells per a joves.</p>
-      </div>
-      <div class="card animate-on-scroll">
-        <div class="card-icon">📄</div>
-        <h3 data-i18n="feat_5_title">Documentació gratuïta</h3>
-        <p data-i18n="feat_5_desc">Checklists de visita, guies per a propietaris, tests personalitzats i més — tot descarregable.</p>
-      </div>
-      <div class="card animate-on-scroll">
-        <div class="card-icon">🏛️</div>
-        <h3 data-i18n="feat_6_title">Dades oficials</h3>
-        <p data-i18n="feat_6_desc">Basem les nostres recomanacions en dades de l'Idescat, Generalitat i registres oficials.</p>
-      </div>
-    </div>
-  </div>
-</section>
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:var(--nav-h)}
+.nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.logo{display:flex;align-items:center;gap:10px;color:var(--txt);font-weight:700;font-size:1rem}
+.logo-icon{width:38px;height:38px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0}
+.logo small{display:block;color:var(--brand);font-size:.7em;font-family:var(--font);font-weight:600}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links a{padding:8px 12px;border-radius:var(--rs);font-size:.85rem;font-weight:500;color:var(--txt2);transition:all .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--brand);background:var(--brand-l)}
+.lang{display:flex;gap:2px;margin-left:10px}
+.lang button{padding:3px 8px;border:1px solid var(--border);border-radius:5px;font-size:.72rem;font-weight:700;background:transparent;color:var(--txt2);transition:all .2s}
+.lang button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.burger{display:none;background:none;border:none;padding:8px;flex-direction:column;gap:5px}
+.burger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+@media(max-width:960px){
+  .burger{display:flex}
+  .nav-links{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;flex-direction:column;background:var(--bg);padding:20px;gap:2px;transform:translateX(100%);transition:transform .3s;overflow-y:auto;z-index:999}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{padding:14px 16px;font-size:1rem;width:100%}
+  .lang{margin:12px 0 0}
+}
 
-<!-- ========== TESTIMONIALS ========== -->
-<section class="section section-alt" id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <div class="overline" data-i18n="test_overline">Testimonis</div>
-      <h2 data-i18n="test_title">Què en diuen els nostres usuaris</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="testimonial animate-on-scroll">
-        <p>"Gràcies a l'assessoria vaig descobrir que podia comprar un pis a Cunit amb el meu sou. Pensava que era impossible!"</p>
-        <div class="testimonial-author">Marc T.</div>
-        <div class="testimonial-role">24 anys, Vilanova i la Geltrú</div>
-      </div>
-      <div class="testimonial animate-on-scroll">
-        <p>"La checklist de visita em va ajudar a detectar problemes d'humitat que no hauria vist. Molt recomanable."</p>
-        <div class="testimonial-author">Laura S.</div>
-        <div class="testimonial-role">28 anys, El Vendrell</div>
-      </div>
-      <div class="testimonial animate-on-scroll">
-        <p>"El comparador de municipis em va obrir els ulls. Vaig trobar zones molt millors del que pensava per al meu pressupost."</p>
-        <div class="testimonial-author">Jordi M.</div>
-        <div class="testimonial-role">31 anys, Barcelona</div>
-      </div>
-    </div>
-  </div>
-</section>
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:var(--rs);font-weight:600;font-size:.9rem;border:2px solid transparent;transition:all .25s}
+.btn-p{background:var(--brand);color:#fff}.btn-p:hover{background:var(--brand-d);color:#fff;transform:translateY(-1px);box-shadow:var(--sh)}
+.btn-a{background:var(--accent);color:#fff}.btn-a:hover{background:var(--accent-d);color:#fff;transform:translateY(-1px)}
+.btn-o{border-color:var(--brand);color:var(--brand);background:transparent}.btn-o:hover{background:var(--brand);color:#fff}
+.btn-w{background:#fff;color:var(--brand)}.btn-w:hover{background:var(--brand-l);color:var(--brand-d)}
+.btn-lg{padding:14px 32px;font-size:.95rem}
 
-<!-- ========== BLOG PREVIEW ========== -->
-<section class="section" id="blog-preview">
-  <div class="container">
-    <div class="section-header">
-      <div class="overline" data-i18n="blog_overline">Blog Actualitat</div>
-      <h2 data-i18n="blog_title">Últims articles</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="card blog-card animate-on-scroll">
-        <div class="blog-card-img">🏘️</div>
-        <div class="blog-card-body">
-          <h3>Comprar o llogar amb sou jove: quan surt millor cada opció?</h3>
-          <p class="blog-card-date">2026</p>
-          <a href="pages/blog.html" class="blog-card-link" data-i18n="blog_read">Llegeix-ne més →</a>
-        </div>
-      </div>
-      <div class="card blog-card animate-on-scroll">
-        <div class="blog-card-img">💰</div>
-        <div class="blog-card-body">
-          <h3>Quant cobra realment un jove al Baix Penedès i quin habitatge es pot permetre?</h3>
-          <p class="blog-card-date">2026</p>
-          <a href="pages/blog.html" class="blog-card-link" data-i18n="blog_read">Llegeix-ne més →</a>
-        </div>
-      </div>
-      <div class="card blog-card animate-on-scroll">
-        <div class="blog-card-img">📊</div>
-        <div class="blog-card-body">
-          <h3>Radiografia del lloguer a Cunit (2025)</h3>
-          <p class="blog-card-date">2025</p>
-          <a href="pages/blog.html" class="blog-card-link" data-i18n="blog_read">Llegeix-ne més →</a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-4">
-      <a href="pages/blog.html" class="btn btn-outline" data-i18n="blog_btn">Veure tots els articles</a>
-    </div>
-  </div>
-</section>
+/* Cards */
+.card{background:var(--bg);border-radius:var(--r);border:1px solid var(--border);padding:28px;transition:all .3s}
+.card:hover{box-shadow:var(--sh);transform:translateY(-2px)}
+.card-ico{width:48px;height:48px;border-radius:10px;background:var(--brand-l);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px}
+.card h3{margin-bottom:6px}
+.card p{color:var(--txt2);font-size:.9rem}
 
-<!-- ========== CTA ========== -->
-<section class="cta-section">
-  <div class="container">
-    <h2 data-i18n="cta_title">Comença a analitzar el teu habitatge</h2>
-    <p data-i18n="cta_desc">Eines gratuïtes, dades reals i orientació professional. Sense compromís.</p>
-    <a href="pages/assessoria.html" class="btn btn-white btn-lg" data-i18n="cta_btn">Començar ara</a>
-  </div>
-</section>
+/* Hero */
+.hero{padding:calc(var(--nav-h) + 56px) 0 72px;background:linear-gradient(135deg,var(--dark) 0%,#1a2744 100%);color:var(--txt-inv);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 20%,rgba(12,122,191,.2) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(245,158,11,.12) 0%,transparent 50%);pointer-events:none}
+.hero-g{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{display:inline-block;padding:5px 14px;border-radius:16px;background:rgba(245,158,11,.12);color:var(--accent);font-size:.8rem;font-weight:600;margin-bottom:16px;border:1px solid rgba(245,158,11,.2)}
+.hero h1{color:#fff;margin-bottom:14px}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-desc{color:#94a3b8;font-size:1.05rem;margin-bottom:28px;max-width:500px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:28px;margin-top:36px}
+.hero-stat strong{display:block;font-size:1.5rem;color:#fff;font-family:var(--serif)}
+.hero-stat span{font-size:.78rem;color:#94a3b8}
+.hero-card{background:rgba(255,255,255,.04);border-radius:var(--r);border:1px solid rgba(255,255,255,.08);padding:28px;backdrop-filter:blur(8px)}
+.hero-card-title{font-size:1.6rem;font-family:var(--serif);color:#fff;margin-bottom:4px}
+.hero-card-sub{font-size:.85rem;color:#94a3b8;margin-bottom:20px}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini-card{background:rgba(255,255,255,.05);padding:12px;border-radius:8px}
+.mini-card small{font-size:.72rem;color:#64748b;display:block;margin-bottom:2px}
+.mini-card strong{font-size:1.1rem;color:#fff}
+@media(max-width:900px){
+  .hero-g{grid-template-columns:1fr;text-align:center}
+  .hero-desc{margin-left:auto;margin-right:auto}
+  .hero-btns,.hero-stats{justify-content:center}
+  .hero-card{display:none}
+}
 
-<!-- ========== FOOTER ========== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="color:#fff;">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-            <rect width="36" height="36" rx="8" fill="#0c7abf"/>
-            <path d="M18 8L8 16h3v10h6v-6h2v6h6V16h3L18 8z" fill="#fff"/>
-          </svg>
-          <span>Assessoria Habitatge</span>
-        </a>
-        <p data-i18n="footer_desc">Plataforma d'assessoria d'habitatge gratuïta per a Catalunya. Dades reals, eines professionals, orientació personalitzada.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/assessoriahabitatge/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
-        </div>
-      </div>
-      <div>
-        <h4 data-i18n="footer_tools">Eines</h4>
-        <a href="pages/assessoria.html" data-i18n="nav_assessoria">Assessoria</a>
-        <a href="pages/propcheck.html" data-i18n="nav_propcheck">Valoració</a>
-        <a href="pages/blog.html" data-i18n="nav_blog">Blog</a>
-        <a href="pages/documentacio.html" data-i18n="nav_docs">Documentació</a>
-      </div>
-      <div>
-        <h4 data-i18n="footer_resources">Recursos</h4>
-        <a href="pages/el-projecte.html" data-i18n="nav_project">El Projecte</a>
-        <a href="pages/premsa.html" data-i18n="nav_press">Premsa</a>
-        <a href="pages/contacte.html" data-i18n="nav_contact">Contacte</a>
-      </div>
-      <div>
-        <h4 data-i18n="footer_legal_title">Legal</h4>
-        <a href="pages/privacitat.html" data-i18n="footer_privacy">Política de privacitat</a>
-        <a href="pages/cookies.html" data-i18n="footer_cookies">Política de cookies</a>
-        <a href="pages/avis-legal.html" data-i18n="footer_terms">Avís legal</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span data-i18n="footer_rights">© 2026 Assessoria Habitatge. Tots els drets reservats.</span>
-      <span data-i18n="footer_disclaimer" style="font-style:italic;">Eina orientativa. Els preus són estimats. No substitueix assessorament professional.</span>
-    </div>
-  </div>
-</footer>
+/* Section headers */
+.sh{text-align:center;margin-bottom:44px}
+.sh .over{text-transform:uppercase;font-size:.78rem;font-weight:700;letter-spacing:2px;color:var(--brand);margin-bottom:10px}
+.sh p{color:var(--txt2);max-width:520px;margin:8px auto 0}
 
-<!-- ========== COOKIE BANNER ========== -->
-<div class="cookie-banner" id="cookieBanner">
-  <span><span data-i18n="cookie_text">Utilitzem cookies pròpies i de tercers per millorar l'experiència.</span> <a href="pages/cookies.html" data-i18n="cookie_policy">Política de cookies</a></span>
-  <div class="cookie-btns">
-    <button class="btn btn-sm btn-outline ck-reject" data-i18n="cookie_reject" style="border-color:rgba(255,255,255,.2);color:#94a3b8;">Rebutjar</button>
-    <button class="btn btn-sm btn-primary ck-accept" data-i18n="cookie_accept">Acceptar</button>
-  </div>
-</div>
+/* Testimonials */
+.test{background:var(--bg);padding:24px;border-radius:var(--r);border:1px solid var(--border);position:relative}
+.test::before{content:'\201C';position:absolute;top:-4px;left:16px;font-size:3.5rem;color:var(--brand-l);font-family:var(--serif);line-height:1}
+.test p{font-style:italic;color:var(--txt2);margin-bottom:14px;position:relative;z-index:1;font-size:.92rem}
+.test-name{font-weight:600;font-size:.88rem}
+.test-role{font-size:.8rem;color:var(--txt2)}
 
-<script src="js/main.js"></script>
-</body>
-</html>
+/* Blog cards */
+.bcard{display:flex;flex-direction:column;overflow:hidden;padding:0}
+.bcard-img{height:180px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+.bcard-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.bcard-body h3{font-size:1.05rem;margin-bottom:6px}
+.bcard-body p{flex:1;font-size:.88rem;color:var(--txt2)}
+.bcard-date{font-size:.78rem;color:var(--txt2);margin-top:10px}
+.bcard-link{color:var(--brand);font-weight:600;font-size:.85rem;margin-top:6px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-d) 100%);color:#fff;text-align:center;padding:56px 0}
+.cta h2{color:#fff;margin-bottom:10px}
+.cta p{color:rgba(255,255,255,.8);max-width:460px;margin:0 auto 24px}
+
+/* Footer */
+.footer{background:var(--dark);color:#94a3b8;padding:48px 0 20px}
+.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.footer-brand{max-width:260px}
+.footer-brand p{font-size:.88rem;margin-top:10px}
+.footer h4{color:#fff;font-size:.82rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px}
+.footer a{color:#94a3b8;font-size:.88rem;display:block;padding:3px 0}
+.footer a:hover{color:#fff}
+.footer-social{display:flex;gap:10px;margin-top:14px}
+.footer-social a{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.footer-social a:hover{background:var(--brand);color:#fff}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;font-size:.78rem;flex-wrap:wrap;gap:10px}
+.footer-legal{display:flex;gap:16px}
+@media(max-width:768px){.footer-g{grid-template-columns:1fr 1fr}.footer-bot{flex-direction:column;text-align:center}}
+@media(max-width:500px){.footer-g{grid-template-columns:1fr}}
+
+/* Page header */
+.ph{padding:calc(var(--nav-h) + 44px) 0 44px;background:var(--bg2);text-align:center;border-bottom:1px solid var(--border)}
+.ph .over{text-transform:uppercase;font-size:.78rem;font-weight:700;letter-spacing:2px;color:var(--brand);margin-bottom:10px}
+.ph p{color:var(--txt2);max-width:520px;margin:10px auto 0}
+
+/* Tool embed */
+.tool-box{background:var(--dark);border-radius:var(--r);overflow:hidden}
+.tool-bar{display:flex;gap:12px;align-items:center;padding:12px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06);color:#94a3b8;font-size:.82rem}
+.tbadge{padding:3px 10px;border-radius:10px;font-size:.72rem;font-weight:600}
+.tbadge-free{background:rgba(16,185,129,.12);color:#10b981}
+.tbadge-new{background:rgba(245,158,11,.12);color:var(--accent)}
+.tool-box iframe{width:100%;height:820px;border:none}
+
+/* Contact */
+.contact-g{display:grid;grid-template-columns:1fr 1.2fr;gap:44px}
+.ci{display:flex;gap:14px;margin-bottom:20px}
+.ci-ico{width:42px;height:42px;border-radius:9px;background:var(--brand-l);color:var(--brand);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form input,.form textarea,.form select{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:.92rem;transition:border .2s}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(12,122,191,.08)}
+.form label{display:block;font-weight:600;font-size:.88rem;margin-bottom:5px}
+.fg{margin-bottom:18px}
+@media(max-width:768px){.contact-g{grid-template-columns:1fr}}
+
+/* Doc cards */
+.dcard{display:flex;gap:18px;align-items:flex-start;padding:24px}
+.dcard-ico{width:52px;height:52px;border-radius:11px;flex-shrink:0;background:var(--brand-l);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.dcard h3{font-size:1.05rem;margin-bottom:4px}
+.dcard p{font-size:.86rem;color:var(--txt2);margin-bottom:6px}
+
+/* Press */
+.pcard{text-align:center;padding:24px}
+.pcard-img{height:140px;background:var(--bg2);border-radius:var(--rs);margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.pcard h3{font-size:.95rem;margin-bottom:5px}
+.pcard p{font-size:.84rem;color:var(--txt2)}
+
+/* Cookie */
+.ck-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--dark);color:#94a3b8;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:.85rem;transform:translateY(100%);transition:transform .4s}
+.ck-banner.visible{transform:translateY(0)}
+.ck-banner a{color:var(--accent)}
+.ck-btns{display:flex;gap:8px;flex-shrink:0}
+@media(max-width:600px){.ck-banner{flex-direction:column;text-align:center}}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.anim{opacity:0;transform:translateY(16px);transition:all .5s ease}
+.anim.visible{opacity:1;transform:translateY(0)}
+
+/* Tag */
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.72rem;font-weight:600;background:var(--brand-l);color:var(--brand)}
